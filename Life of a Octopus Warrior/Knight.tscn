@@ -1,0 +1,211 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://Hitbox.tscn" type="PackedScene" id=1]
+[ext_resource path="res://AreaOfEffect.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Sprites.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Hiet.wav" type="AudioStream" id=4]
+[ext_resource path="res://Hurtbox.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Knight.gd" type="Script" id=6]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 69.1994
+
+[sub_resource type="CapsuleShape2D" id=3]
+radius = 1.707
+height = 18.531
+
+[sub_resource type="CapsuleShape2D" id=4]
+radius = 2.43699
+height = 2.40788
+
+[sub_resource type="Animation" id=5]
+resource_name = "Idle"
+tracks/0/type = "value"
+tracks/0/path = NodePath("../Knight/colored_transparent:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 30 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("colored_transparent/colored_transparent2:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 129 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("colored_transparent/colored_transparent2:rotation_degrees")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 315.0 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("../Knight/Hitbox/CollisionShape2D:rotation_degrees")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("../Knight/Hitbox/CollisionShape2D:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "Smack"
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("../Knight/colored_transparent:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 30 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("colored_transparent/colored_transparent2:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 129 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("colored_transparent/colored_transparent2:rotation_degrees")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 315.0, 305.0, 290.0, 280.0, 270.0, 260.0, 250.0 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("../Knight/Hitbox/CollisionShape2D:rotation_degrees")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, -8.7, -26.0, -26.0, -45.0, -45.0, -62.3 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("../Knight/Hitbox/CollisionShape2D:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+
+[node name="Knight" type="KinematicBody2D"]
+script = ExtResource( 6 )
+
+[node name="colored_transparent" parent="." instance=ExtResource( 3 )]
+position = Vector2( -0.133671, 0.476797 )
+frame = 30
+
+[node name="colored_transparent2" parent="colored_transparent" instance=ExtResource( 3 )]
+position = Vector2( -4.42244, -4.48694 )
+rotation = 5.49779
+scale = Vector2( 1.00123, 0.906228 )
+frame = 129
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="Hurtbox" parent="." instance=ExtResource( 5 )]
+collision_layer = 4
+collision_mask = 34
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
+position = Vector2( -0.311386, -0.085556 )
+shape = SubResource( 1 )
+
+[node name="AreaOfEffect" parent="." instance=ExtResource( 2 )]
+collision_layer = 0
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaOfEffect"]
+position = Vector2( 0.375061, 0.470398 )
+shape = SubResource( 2 )
+
+[node name="Hitbox" parent="." instance=ExtResource( 1 )]
+collision_layer = 64
+collision_mask = 16
+
+[node name="CollisionShape2D" parent="Hitbox" index="0"]
+position = Vector2( -4.704, -4.024 )
+shape = SubResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0.427185, 5.12622 )
+rotation = 1.5708
+shape = SubResource( 4 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Idle = SubResource( 5 )
+anims/Smack = SubResource( 6 )
+
+[node name="Hit" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 4 )
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="area_entered" from="Hurtbox" to="." method="_on_Hurtbox_area_entered"]
+[connection signal="area_exited" from="Hurtbox" to="." method="_on_Hurtbox_area_exited"]
+[connection signal="area_entered" from="AreaOfEffect" to="." method="_on_AreaOfEffect_area_entered"]
+[connection signal="area_exited" from="AreaOfEffect" to="." method="_on_AreaOfEffect_area_exited"]
+[connection signal="area_entered" from="Hitbox" to="." method="_on_Hitbox_area_entered"]
+
+[editable path="Hurtbox"]
+
+[editable path="AreaOfEffect"]
+
+[editable path="Hitbox"]

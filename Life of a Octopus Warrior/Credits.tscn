@@ -1,0 +1,47 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Font.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Credits.gd" type="Script" id=2]
+
+[node name="Credits" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="play" type="LinkButton" parent="."]
+margin_left = 255.59
+margin_top = 162.013
+margin_right = 295.59
+margin_bottom = 176.013
+custom_fonts/font = ExtResource( 1 )
+action_mode = 0
+text = "Menu"
+underline = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="."]
+margin_left = 120.397
+margin_top = 2.36401
+margin_right = 196.397
+margin_bottom = 16.364
+custom_fonts/font = ExtResource( 1 )
+text = "Credits"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Studio Name Lol" type="Label" parent="."]
+margin_left = 1.56182
+margin_top = 18.3081
+margin_right = 320.562
+margin_bottom = 168.308
+custom_fonts/font = ExtResource( 1 )
+text = "Programming: Just Me, Plexagon
+Art: https://kenney.nl/assets/bit-pack
+Sound Effects: Created using SFXR
+Jam Page: https://itch.io/jam/miz-jam-1
+Glad to be one of the 200 plus Entries!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="play" to="." method="_on_play_pressed"]

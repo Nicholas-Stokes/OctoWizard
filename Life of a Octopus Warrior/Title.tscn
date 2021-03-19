@@ -1,0 +1,147 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Font.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Sprites.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Title.gd" type="Script" id=3]
+
+[sub_resource type="Animation" id=1]
+resource_name = "Squish"
+length = 0.9
+loop = true
+step = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath("colored_transparent:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 3.90935, 3.61248 ), Vector2( 4.97809, 4.62184 ), Vector2( 3.90935, 3.61248 ) ]
+}
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="Title" type="Label" parent="."]
+margin_left = 111.319
+margin_top = 5.85567
+margin_right = 187.319
+margin_bottom = 19.8557
+custom_fonts/font = ExtResource( 1 )
+text = "Octowizard!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Studio Name Lol" type="Label" parent="."]
+margin_left = 62.3167
+margin_top = 25.9898
+margin_right = 271.317
+margin_bottom = 39.9898
+custom_fonts/font = ExtResource( 1 )
+text = "A game by CyberPhoenix Studios"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Reason" type="Label" parent="."]
+margin_left = 19.1732
+margin_top = 47.0568
+margin_right = 332.173
+margin_bottom = 61.0568
+custom_fonts/font = ExtResource( 1 )
+text = "Created in 20 Hours for the Miziziziziz Game Jam"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="colored_transparent" parent="." instance=ExtResource( 2 )]
+position = Vector2( 263.355, 118.02 )
+scale = Vector2( 3.90935, 3.61248 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Squish = SubResource( 1 )
+
+[node name="Credits" type="LinkButton" parent="."]
+margin_left = 136.175
+margin_top = 108.241
+margin_right = 176.175
+margin_bottom = 122.241
+custom_fonts/font = ExtResource( 1 )
+action_mode = 0
+text = "Credits"
+underline = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Story" type="LinkButton" parent="."]
+margin_left = 135.476
+margin_top = 85.8948
+margin_right = 175.476
+margin_bottom = 99.8948
+custom_fonts/font = ExtResource( 1 )
+action_mode = 0
+text = "Story"
+underline = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="play" type="LinkButton" parent="."]
+margin_left = 136.175
+margin_top = 65.6432
+margin_right = 176.175
+margin_bottom = 79.6432
+custom_fonts/font = ExtResource( 1 )
+action_mode = 0
+text = "play"
+underline = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="youtube" type="LinkButton" parent="."]
+margin_left = 18.1566
+margin_top = 159.918
+margin_right = 58.1566
+margin_bottom = 173.918
+custom_fonts/font = ExtResource( 1 )
+action_mode = 0
+text = "youtube"
+underline = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="more games" type="LinkButton" parent="."]
+margin_left = 118.018
+margin_top = 159.918
+margin_right = 210.018
+margin_bottom = 173.918
+custom_fonts/font = ExtResource( 1 )
+action_mode = 0
+text = "more games"
+underline = 2
+
+[node name="twitter" type="LinkButton" parent="."]
+margin_left = 258.398
+margin_top = 160.549
+margin_right = 298.398
+margin_bottom = 174.549
+custom_fonts/font = ExtResource( 1 )
+action_mode = 0
+text = "twitter"
+underline = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="Credits" to="." method="_on_Credits_pressed"]
+[connection signal="pressed" from="Story" to="." method="_on_Story_pressed"]
+[connection signal="pressed" from="play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="youtube" to="." method="_on_youtube_pressed"]
+[connection signal="pressed" from="more games" to="." method="_on_more_games_pressed"]
+[connection signal="pressed" from="twitter" to="." method="_on_twitter_pressed"]

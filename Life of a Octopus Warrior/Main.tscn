@@ -1,0 +1,400 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://Stumps.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Trees.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Pot.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Font.tres" type="DynamicFont" id=5]
+[ext_resource path="res://CanvasLayer.gd" type="Script" id=6]
+[ext_resource path="res://PracticeDoll.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Spell Target.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Barthing.png" type="Texture" id=9]
+[ext_resource path="res://Barthing1.png" type="Texture" id=10]
+[ext_resource path="res://FireGremlins.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Food.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Animal.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Main.gd" type="Script" id=14]
+
+[node name="Tutorial" type="Node2D"]
+position = Vector2( 3.4137, 1.9507 )
+script = ExtResource( 14 )
+
+[node name="KinematicBody2D" parent="." instance=ExtResource( 2 )]
+position = Vector2( 65.7561, 50.2781 )
+
+[node name="Camera2D" type="Camera2D" parent="KinematicBody2D"]
+current = true
+smoothing_enabled = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+script = ExtResource( 6 )
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+margin_left = 42.0244
+margin_top = 157.564
+margin_right = 82.0244
+margin_bottom = 176.564
+custom_fonts/font = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Timer" type="Timer" parent="CanvasLayer"]
+wait_time = 2.0
+
+[node name="TextureProgress" type="TextureProgress" parent="CanvasLayer"]
+margin_right = 320.0
+margin_bottom = 4.0
+value = 99.0
+texture_under = ExtResource( 10 )
+texture_progress = ExtResource( 9 )
+nine_patch_stretch = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Stumps" parent="." instance=ExtResource( 1 )]
+position = Vector2( 122.286, 70.2354 )
+
+[node name="Stumps2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 100.822, 74.438 )
+
+[node name="Stumps3" parent="." instance=ExtResource( 1 )]
+position = Vector2( 77.8557, 69.5012 )
+
+[node name="Stumps4" parent="." instance=ExtResource( 1 )]
+position = Vector2( 55.3184, 70.7891 )
+
+[node name="Stumps5" parent="." instance=ExtResource( 1 )]
+position = Vector2( 142.676, 74.9574 )
+
+[node name="Stumps6" parent="." instance=ExtResource( 1 )]
+position = Vector2( 167.789, 78.6063 )
+
+[node name="Stumps7" parent="." instance=ExtResource( 1 )]
+position = Vector2( 70.3431, 26.6637 )
+
+[node name="Stumps" parent="Stumps7" instance=ExtResource( 1 )]
+position = Vector2( 20.1761, -4.50741 )
+
+[node name="Stumps2" parent="Stumps7" instance=ExtResource( 1 )]
+position = Vector2( 40.3521, 7.08308 )
+
+[node name="Stumps3" parent="Stumps7" instance=ExtResource( 1 )]
+position = Vector2( 65.0356, 11.3759 )
+
+[node name="Stumps4" parent="Stumps7" instance=ExtResource( 1 )]
+position = Vector2( 88.0019, 12.6637 )
+
+[node name="Stumps5" parent="Stumps7" instance=ExtResource( 1 )]
+position = Vector2( 108.393, 7.51236 )
+
+[node name="Stumps6" parent="Stumps7" instance=ExtResource( 1 )]
+position = Vector2( -36.5296, 22.9891 )
+
+[node name="Stumps" parent="Stumps7/Stumps6" instance=ExtResource( 1 )]
+position = Vector2( 148.274, 49.9506 )
+
+[node name="Stumps2" parent="Stumps7/Stumps6" instance=ExtResource( 1 )]
+position = Vector2( 165.752, -37.0394 )
+
+[node name="Stumps3" parent="Stumps7/Stumps6" instance=ExtResource( 1 )]
+position = Vector2( 185.613, -45.7781 )
+
+[node name="Stumps4" parent="Stumps7/Stumps6" instance=ExtResource( 1 )]
+position = Vector2( 207.459, -46.1753 )
+
+[node name="Stumps5" parent="Stumps7/Stumps6" instance=ExtResource( 1 )]
+position = Vector2( 233.675, -41.0115 )
+
+[node name="Stumps6" parent="Stumps7/Stumps6" instance=ExtResource( 1 )]
+position = Vector2( 255.522, -21.1508 )
+
+[node name="Stumps7" parent="Stumps7/Stumps6" instance=ExtResource( 1 )]
+position = Vector2( 273.397, 4.27092 )
+
+[node name="Stumps8" parent="Stumps7/Stumps6" instance=ExtResource( 1 )]
+position = Vector2( 151.849, 72.1946 )
+
+[node name="Stumps9" parent="Stumps7/Stumps6" instance=ExtResource( 1 )]
+position = Vector2( 159.794, 98.8079 )
+
+[node name="Stumps10" parent="Stumps7/Stumps6" instance=ExtResource( 1 )]
+position = Vector2( 181.64, 117.08 )
+
+[node name="Stumps12" parent="Stumps7/Stumps6" instance=ExtResource( 1 )]
+position = Vector2( 232.484, 120.258 )
+
+[node name="Stumps" parent="Stumps7/Stumps6/Stumps12" instance=ExtResource( 1 )]
+position = Vector2( 22.244, -10.3276 )
+
+[node name="Stumps2" parent="Stumps7/Stumps6/Stumps12" instance=ExtResource( 1 )]
+position = Vector2( 42.502, -34.1604 )
+
+[node name="Stumps13" parent="Stumps7/Stumps6" instance=ExtResource( 1 )]
+position = Vector2( 273.794, 53.9227 )
+
+[node name="Stumps14" parent="Stumps7/Stumps6" instance=ExtResource( 1 )]
+position = Vector2( 271.014, 29.6926 )
+
+[node name="Stumps8" parent="." instance=ExtResource( 1 )]
+position = Vector2( 51.0257, 27.9515 )
+
+[node name="StaticBody2D" parent="." instance=ExtResource( 3 )]
+position = Vector2( 117.651, 117.158 )
+
+[node name="StaticBody2D2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 223.798, 50.8159 )
+
+[node name="StaticBody2D3" parent="." instance=ExtResource( 3 )]
+position = Vector2( 247.681, 113.177 )
+
+[node name="StaticBody2D4" parent="." instance=ExtResource( 3 )]
+position = Vector2( 15.4846, 107.87 )
+
+[node name="StaticBody2D5" parent="." instance=ExtResource( 3 )]
+position = Vector2( 90.451, -22.8237 )
+
+[node name="StaticBody2D6" parent="." instance=ExtResource( 3 )]
+position = Vector2( 137.554, 16.3181 )
+
+[node name="StaticBody2D7" parent="." instance=ExtResource( 3 )]
+position = Vector2( 294.784, -10.2187 )
+
+[node name="StaticBody2D8" parent="." instance=ExtResource( 3 )]
+position = Vector2( 331.272, 56.1232 )
+
+[node name="StaticBody2D9" parent="." instance=ExtResource( 3 )]
+position = Vector2( 333.926, 131.753 )
+
+[node name="StaticBody2D10" parent="." instance=ExtResource( 3 )]
+position = Vector2( 130.92, 166.251 )
+
+[node name="StaticBody2D11" parent="." instance=ExtResource( 3 )]
+position = Vector2( 63.2508, 119.811 )
+
+[node name="StaticBody2D12" parent="." instance=ExtResource( 3 )]
+position = Vector2( -9.72531, 52.8061 )
+
+[node name="StaticBody2D13" parent="." instance=ExtResource( 3 )]
+position = Vector2( 0.889404, 164.924 )
+
+[node name="StaticBody2D14" parent="." instance=ExtResource( 3 )]
+position = Vector2( 160.773, 216.007 )
+
+[node name="StaticBody2D15" parent="." instance=ExtResource( 3 )]
+position = Vector2( 306.726, 195.441 )
+
+[node name="StaticBody2D16" parent="." instance=ExtResource( 3 )]
+position = Vector2( 21.4554, -10.8821 )
+
+[node name="StaticBody2D17" parent="." instance=ExtResource( 3 )]
+position = Vector2( -2.42769, 23.6157 )
+
+[node name="StaticBody2D18" parent="." instance=ExtResource( 3 )]
+position = Vector2( 9.51385, 80.6697 )
+
+[node name="StaticBody2D19" parent="." instance=ExtResource( 3 )]
+position = Vector2( 168.734, -0.267426 )
+
+[node name="StaticBody2D20" parent="." instance=ExtResource( 3 )]
+position = Vector2( 71.8753, -0.930847 )
+
+[node name="StaticBody2D21" parent="." instance=ExtResource( 3 )]
+position = Vector2( 231.759, -22.8237 )
+
+[node name="StaticBody2D22" parent="." instance=ExtResource( 3 )]
+position = Vector2( 170.725, -31.4481 )
+
+[node name="StaticBody2D23" parent="." instance=ExtResource( 3 )]
+position = Vector2( 32.0701, -40.0726 )
+
+[node name="Stumps9" parent="." instance=ExtResource( 1 )]
+position = Vector2( 69.2216, 147.675 )
+
+[node name="StaticBody2D24" parent="." instance=ExtResource( 3 )]
+position = Vector2( 180.252, 197.504 )
+
+[node name="Stumps" parent="StaticBody2D24" instance=ExtResource( 1 )]
+position = Vector2( 33.2918, 14.3015 )
+
+[node name="Stumps2" parent="StaticBody2D24" instance=ExtResource( 1 )]
+position = Vector2( 31.6193, 38.5524 )
+
+[node name="StaticBody2D25" parent="." instance=ExtResource( 3 )]
+position = Vector2( 366.461, 224.777 )
+
+[node name="Stumps" parent="StaticBody2D25" instance=ExtResource( 1 )]
+position = Vector2( -100.234, -29.2779 )
+
+[node name="Stumps2" parent="StaticBody2D25" instance=ExtResource( 1 )]
+position = Vector2( -98.9792, -7.53566 )
+
+[node name="Stumps3" parent="StaticBody2D25" instance=ExtResource( 1 )]
+position = Vector2( -96.4705, 15.0428 )
+
+[node name="Pot" parent="StaticBody2D25" instance=ExtResource( 4 )]
+position = Vector2( -125.594, -47.1222 )
+
+[node name="Pot2" parent="StaticBody2D25" instance=ExtResource( 4 )]
+position = Vector2( -126.452, -8.54041 )
+
+[node name="Pot3" parent="StaticBody2D25" instance=ExtResource( 4 )]
+position = Vector2( -126.452, 24.0398 )
+
+[node name="Spell Target" parent="StaticBody2D25" instance=ExtResource( 8 )]
+position = Vector2( -127.281, 97.0033 )
+
+[node name="Stumps10" parent="." instance=ExtResource( 1 )]
+position = Vector2( 353.165, 171.558 )
+
+[node name="Stumps11" parent="." instance=ExtResource( 1 )]
+position = Vector2( -16.3595, 80.6697 )
+
+[node name="Stumps12" parent="." instance=ExtResource( 1 )]
+position = Vector2( 124.285, -20.17 )
+
+[node name="StaticBody2D26" parent="." instance=ExtResource( 3 )]
+position = Vector2( 371.741, 76.6892 )
+
+[node name="StaticBody2D27" parent="." instance=ExtResource( 3 )]
+position = Vector2( 354.492, 24.2791 )
+
+[node name="Stumps13" parent="." instance=ExtResource( 1 )]
+position = Vector2( 386.336, 115.168 )
+
+[node name="StaticBody2D28" parent="." instance=ExtResource( 3 )]
+position = Vector2( 350.511, 97.2552 )
+
+[node name="StaticBody2D29" parent="." instance=ExtResource( 3 )]
+position = Vector2( 329.282, -10.2187 )
+
+[node name="StaticBody2D30" parent="." instance=ExtResource( 3 )]
+position = Vector2( 362.453, 200.085 )
+
+[node name="StaticBody2D31" parent="." instance=ExtResource( 3 )]
+position = Vector2( 396.951, 154.973 )
+
+[node name="StaticBody2D32" parent="." instance=ExtResource( 3 )]
+position = Vector2( 95.7584, 205.393 )
+
+[node name="StaticBody2D33" parent="." instance=ExtResource( 3 )]
+position = Vector2( 44.6751, 184.163 )
+
+[node name="StaticBody2D34" parent="." instance=ExtResource( 3 )]
+position = Vector2( -62.7988, 91.9479 )
+
+[node name="StaticBody2D35" parent="." instance=ExtResource( 3 )]
+position = Vector2( -9.06189, 123.792 )
+
+[node name="Pot" parent="StaticBody2D35" instance=ExtResource( 4 )]
+position = Vector2( 129.367, -69.659 )
+
+[node name="PracticeDoll" parent="." instance=ExtResource( 7 )]
+position = Vector2( 240.893, 84.1643 )
+
+[node name="Stumps14" parent="." instance=ExtResource( 1 )]
+position = Vector2( 214.381, 187.973 )
+
+[node name="Stumps15" parent="." instance=ExtResource( 1 )]
+position = Vector2( 201.47, 259.628 )
+
+[node name="Stumps16" parent="." instance=ExtResource( 1 )]
+position = Vector2( 282.477, 261.723 )
+
+[node name="Stumps17" parent="." instance=ExtResource( 1 )]
+position = Vector2( 200.771, 284.768 )
+
+[node name="Stumps18" parent="." instance=ExtResource( 1 )]
+position = Vector2( 202.168, 312.702 )
+
+[node name="Stumps19" parent="." instance=ExtResource( 1 )]
+position = Vector2( 212.643, 337.842 )
+
+[node name="Stumps20" parent="." instance=ExtResource( 1 )]
+position = Vector2( 272.002, 332.255 )
+
+[node name="Stumps" parent="Stumps20" instance=ExtResource( 1 )]
+position = Vector2( -11.1733, 18.8551 )
+
+[node name="Stumps22" parent="." instance=ExtResource( 1 )]
+position = Vector2( 284.572, 286.863 )
+
+[node name="Stumps23" parent="." instance=ExtResource( 1 )]
+position = Vector2( 234.99, 358.792 )
+
+[node name="Stumps24" parent="." instance=ExtResource( 1 )]
+position = Vector2( 306.998, 275.999 )
+
+[node name="Stumps25" parent="." instance=ExtResource( 1 )]
+position = Vector2( 326.998, 266.999 )
+
+[node name="Stumps26" parent="." instance=ExtResource( 1 )]
+position = Vector2( 350.997, 265.999 )
+
+[node name="Stumps27" parent="." instance=ExtResource( 1 )]
+position = Vector2( 375.997, 264.999 )
+
+[node name="Stumps28" parent="." instance=ExtResource( 1 )]
+position = Vector2( 296.998, 341.998 )
+
+[node name="Stumps29" parent="." instance=ExtResource( 1 )]
+position = Vector2( 322.998, 354.998 )
+
+[node name="Stumps30" parent="." instance=ExtResource( 1 )]
+position = Vector2( 343.997, 354.998 )
+
+[node name="Stumps31" parent="." instance=ExtResource( 1 )]
+position = Vector2( 366.997, 354.998 )
+
+[node name="Stumps32" parent="." instance=ExtResource( 1 )]
+position = Vector2( 401.997, 353.998 )
+
+[node name="Stumps33" parent="." instance=ExtResource( 1 )]
+position = Vector2( 408.997, 266.999 )
+
+[node name="Stumps34" parent="." instance=ExtResource( 1 )]
+position = Vector2( 440.997, 267.999 )
+
+[node name="Stumps35" parent="." instance=ExtResource( 1 )]
+position = Vector2( 435.997, 352.998 )
+
+[node name="Stumps36" parent="." instance=ExtResource( 1 )]
+position = Vector2( 460.997, 332.998 )
+
+[node name="Stumps37" parent="." instance=ExtResource( 1 )]
+position = Vector2( 461.997, 284.999 )
+
+[node name="Stumps38" parent="." instance=ExtResource( 1 )]
+position = Vector2( 484.822, 286.975 )
+
+[node name="Stumps" parent="Stumps38" instance=ExtResource( 1 )]
+position = Vector2( -1.84097, 48.8253 )
+
+[node name="Stumps2" parent="Stumps38" instance=ExtResource( 1 )]
+position = Vector2( 22.7071, 2.72278 )
+
+[node name="Stumps3" parent="Stumps38" instance=ExtResource( 1 )]
+position = Vector2( 19.7135, 50.6215 )
+
+[node name="Stumps4" parent="Stumps38" instance=ExtResource( 1 )]
+position = Vector2( 35.2806, 26.6721 )
+
+[node name="PracticeDoll2" parent="." instance=ExtResource( 7 )]
+position = Vector2( 352.862, 334.46 )
+
+[node name="Spell Target" parent="." instance=ExtResource( 8 )]
+position = Vector2( 437.979, 287.89 )
+
+[node name="FireGremlins" parent="." instance=ExtResource( 11 )]
+position = Vector2( 433.148, 326.718 )
+
+[node name="FireGremlins2" parent="." instance=ExtResource( 11 )]
+position = Vector2( 339.636, 290.708 )
+
+[node name="Food" parent="." instance=ExtResource( 12 )]
+position = Vector2( 470.408, 310.055 )
+
+[node name="Animal" parent="." instance=ExtResource( 13 )]
+position = Vector2( 498.128, 312.129 )
+[connection signal="timeout" from="CanvasLayer/Timer" to="CanvasLayer" method="_on_Timer_timeout"]

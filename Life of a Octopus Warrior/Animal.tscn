@@ -1,0 +1,106 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Sprites.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Hurtbox.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Animal.gd" type="Script" id=3]
+
+[sub_resource type="Animation" id=1]
+resource_name = "1"
+tracks/0/type = "value"
+tracks/0/path = NodePath("colored_transparent:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 410 ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "2"
+tracks/0/type = "value"
+tracks/0/path = NodePath("colored_transparent:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 411 ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "3"
+tracks/0/type = "value"
+tracks/0/path = NodePath("colored_transparent:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 412 ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "4"
+tracks/0/type = "value"
+tracks/0/path = NodePath("colored_transparent:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 413 ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "5"
+tracks/0/type = "value"
+tracks/0/path = NodePath("colored_transparent:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 414 ]
+}
+
+[sub_resource type="RectangleShape2D" id=6]
+
+[node name="Animal" type="StaticBody2D"]
+script = ExtResource( 3 )
+
+[node name="colored_transparent" parent="." instance=ExtResource( 1 )]
+position = Vector2( -1.41533, -0.00895691 )
+frame = 414
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/1 = SubResource( 1 )
+anims/2 = SubResource( 2 )
+anims/3 = SubResource( 3 )
+anims/4 = SubResource( 4 )
+anims/5 = SubResource( 5 )
+
+[node name="Hurtbox" parent="." instance=ExtResource( 2 )]
+collision_layer = 4
+collision_mask = 16
+
+[node name="CollisionShape2D" parent="Hurtbox" index="0"]
+shape = SubResource( 6 )
+[connection signal="area_entered" from="Hurtbox" to="." method="_on_Hurtbox_area_entered"]
+
+[editable path="Hurtbox"]
